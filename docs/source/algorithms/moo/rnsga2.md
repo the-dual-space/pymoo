@@ -40,7 +40,7 @@ The rank is calculated as the euclidean distance to each reference point. The so
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/rnsga2.png?raw=true" width="450">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/rnsga2.png?raw=true" width="450">
 </div>
 
 +++

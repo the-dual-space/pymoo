@@ -92,7 +92,7 @@ dev = [
 [project.urls]
 Homepage = "https://pymoo.org"
 Documentation = "https://pymoo.org"
-Repository = "https://github.com/anyoptimization/pymoo"
+Repository = "https://github.com/the-dual-space/pymoo"
 
 [project.scripts]
 pymoo-docs = "cli:main"

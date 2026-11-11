@@ -32,7 +32,7 @@ The algorithm is implemented based on <cite data-cite="sms"></cite>. The hypervo
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/sms.png?raw=true" width="300">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/sms.png?raw=true" width="300">
 </div>
 
 +++

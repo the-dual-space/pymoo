@@ -44,7 +44,7 @@ For example, if $p=10$ is chosen for a three-objective problem ($M=3$), then the
 Due to the highly structured nature of the procedure, this method cannot produce an arbitrary number of points desired in an EMaO application. Moreover, in higher dimensional space, most points do not lie in the interior but on the boundaries. Both are demonstrated in the figure below.
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/ref_dir_interior.png?raw=true" width="450">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/ref_dir_interior.png?raw=true" width="450">
 </div>
 
 +++

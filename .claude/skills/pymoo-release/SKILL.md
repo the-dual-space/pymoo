@@ -34,7 +34,7 @@ registered — add it with these exact values:
 
 | Field | Value |
 |---|---|
-| Owner | `anyoptimization` |
+| Owner | `the-dual-space` |
 | Repository | `pymoo` |
 | Workflow name | `build.yml` |
 | Environment | `pypi` (PyPI) / `testpypi` (TestPyPI) |
@@ -142,8 +142,8 @@ Then GitHub → Actions → the tag-triggered Build run. After wheels+sdist buil
 approve it, and it trusted-publishes to PyPI.
 
 ```bash
-gh run list --repo anyoptimization/pymoo --workflow=build.yml --limit 3
-gh run rerun <run-id> --repo anyoptimization/pymoo --failed   # re-run just publish, no rebuild
+gh run list --repo the-dual-space/pymoo --workflow=build.yml --limit 3
+gh run rerun <run-id> --repo the-dual-space/pymoo --failed   # re-run just publish, no rebuild
 curl -s https://pypi.org/pypi/pymoo/x.y.z/json -o /dev/null -w '%{http_code}\n'  # 200 when live
 ```
 
@@ -155,7 +155,7 @@ A pushed tag does NOT auto-create a Release. Create it to match convention
 (title `VERSION x.y.z`, body = the changelog bullets, mark Latest):
 
 ```bash
-gh release create x.y.z --repo anyoptimization/pymoo \
+gh release create x.y.z --repo the-dual-space/pymoo \
     --title "VERSION x.y.z" --latest --notes-file <changelog-bullets.md>
 ```
 

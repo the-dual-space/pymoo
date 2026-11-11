@@ -71,7 +71,7 @@ regions and the constraints that are active in each region.
 +++ {"raw_mimetype": "text/html"}
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/pf_osy.png?raw=true" width="450">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/pf_osy.png?raw=true" width="450">
 </div>
 
 +++

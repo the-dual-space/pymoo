@@ -24,7 +24,7 @@ If you have used our framework for research purposes, you can cite pymoo :cite:`
 
 
 All references of this online documentation are listed below.
-The corresponding `BibTex <https://raw.githubusercontent.com/anyoptimization/pymoo/master/doc/source/references.bib>`_
+The corresponding `BibTex <https://raw.githubusercontent.com/the-dual-space/pymoo/master/doc/source/references.bib>`_
 is available as well.
 
 | 

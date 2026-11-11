@@ -3,7 +3,7 @@
 
 **If you are looking for pymoo's documentation, go here instead: https://www.pymoo.org/**
 
-These guidelines are for people who want to contribute to pymoo. There are many ways to contribute, such as contributing code, reporting bugs, creating feature requests, helping other users [in our Discussions](https://github.com/anyoptimization/pymoo/discussions) or [in our Discord](https://discord.gg/DUCGrvqWEM), etc.
+These guidelines are for people who want to contribute to pymoo. There are many ways to contribute, such as contributing code, reporting bugs, creating feature requests, helping other users [in our Discussions](https://github.com/the-dual-space/pymoo/discussions) or [in our Discord](https://discord.gg/DUCGrvqWEM), etc.
 
 ## Before Contributing
 **Before you start coding a bug fix or feature request, please post in the respective GitHub Issue to express your intent to volunteer and wait for a positive response** And if there is no issue created yet, please create one first.

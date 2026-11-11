@@ -42,7 +42,7 @@ where $\pi$ is a random permutation with 3 entries. The difference is taken betw
 
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/de_crossover.png?raw=true" width="350">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/de_crossover.png?raw=true" width="350">
 </div>
 
 

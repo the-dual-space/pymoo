@@ -33,7 +33,7 @@ First, the non-dominated sorting is done as in NSGA-II for survival.
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/nsga3_survival_1.png?raw=true" width="350">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/nsga3_survival_1.png?raw=true" width="350">
 </div>
 
 +++
@@ -43,7 +43,7 @@ Second, from the splitting front, some solutions need to be selected. NSGA-III f
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/nsga3_survival_2.png?raw=true" width="350">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/nsga3_survival_2.png?raw=true" width="350">
 </div>
 
 +++

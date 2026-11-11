@@ -32,7 +32,7 @@ The algorithm is implemented based on <cite data-cite="rvea"></cite>. In RVEA, a
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/rvea_apd.png?raw=true" width="350">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/rvea_apd.png?raw=true" width="350">
 </div>
 
 +++

@@ -33,7 +33,7 @@ The mating selection works as follows:
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/unsga3_mating.png?raw=true" width="400">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/unsga3_mating.png?raw=true" width="400">
 </div>
 
 +++

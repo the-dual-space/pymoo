@@ -117,7 +117,7 @@ If you intend to use not the latest development, select the branch you intend to
 .. code:: bash
 
     pip install numpy
-    git clone https://github.com/anyoptimization/pymoo
+    git clone https://github.com/the-dual-space/pymoo
     cd pymoo
     make compile
     pip install .

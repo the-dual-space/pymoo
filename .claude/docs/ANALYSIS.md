@@ -69,7 +69,7 @@ Everything below is either downstream of that, or independent correctness/UX deb
   mislabeled wheel to PyPI. Everything that proves correctness is human-dependent.
 
 ### C2. The remote `.pf` data path is the biggest reliability + integrity risk
-`pymoo/util/remote.py` (server in `pymoo/config.py:25-27`, `raw.githubusercontent.com/anyoptimization/pymoo-data`):
+`pymoo/util/remote.py` (server in `pymoo/config.py:25-27`, `raw.githubusercontent.com/the-dual-space/pymoo-data`):
 - **Cache is written into the installed package dir** — `remote.py:28`
   `folder = join(dirname(dirname(abspath(__file__))), "data")` →
   `site-packages/pymoo/data/`. On hardened/system-Python/Docker-non-root/Nix

@@ -8,17 +8,17 @@
    :target: https://www.apache.org/licenses/LICENSE-2.0
 
 
-.. |logo| image:: https://github.com/anyoptimization/pymoo-data/blob/main/logo.png?raw=true
+.. |logo| image:: https://github.com/the-dual-space/pymoo-data/blob/main/logo.png?raw=true
   :target: https://pymoo.org
   :alt: pymoo
 
 
-.. |animation| image:: https://github.com/anyoptimization/pymoo-data/blob/main/animation.gif?raw=true
+.. |animation| image:: https://github.com/the-dual-space/pymoo-data/blob/main/animation.gif?raw=true
   :target: https://pymoo.org
   :alt: pymoo
 
 
-.. _Github: https://github.com/anyoptimization/pymoo
+.. _Github: https://github.com/the-dual-space/pymoo
 .. _Documentation: https://www.pymoo.org/
 .. _Paper: https://ieeexplore.ieee.org/document/9078759
 
@@ -61,7 +61,7 @@ For the current developer version:
 
 .. code:: bash
 
-    git clone https://github.com/anyoptimization/pymoo
+    git clone https://github.com/the-dual-space/pymoo
     cd pymoo
     pip install .
 

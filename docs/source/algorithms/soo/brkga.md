@@ -33,7 +33,7 @@ An excellent and very informative presentation about BRKGAs can be found [here](
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/brkga.png?raw=true" width="350">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/brkga.png?raw=true" width="350">
 </div>
 
 +++

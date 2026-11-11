@@ -38,7 +38,7 @@ are selected frontwise. By doing so, there will be a situation where a front nee
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/nsga2_crowding.png?raw=true" width="350">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/nsga2_crowding.png?raw=true" width="350">
 </div>
 
 +++
@@ -49,7 +49,7 @@ The crowding distance is the Manhattan Distance in the objective space. However,
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/nsga2_survival.png?raw=true" width="500">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/nsga2_survival.png?raw=true" width="500">
 </div>
 
 +++

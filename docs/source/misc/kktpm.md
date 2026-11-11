@@ -30,7 +30,7 @@ In a single objective problem, the metric shows how close a point is from being 
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/kktpm.png?raw=true" width="350">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/kktpm.png?raw=true" width="350">
 </div>
 
 +++

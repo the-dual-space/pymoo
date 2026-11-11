@@ -151,7 +151,7 @@ For all performance indicators shown so far, a target set needs to be known. For
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/hv.png?raw=true" width="350">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/hv.png?raw=true" width="350">
 </div>
 
 +++

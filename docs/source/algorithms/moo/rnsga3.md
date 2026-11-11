@@ -33,7 +33,7 @@ To generate the reference directions refer to the [R-NSGA-III paper](https://iee
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/rnsga3_sketch.png?raw=true" width="250">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/rnsga3_sketch.png?raw=true" width="250">
 </div>
 
 +++
@@ -43,7 +43,7 @@ The algorithm follows the general NSGA-III procedure with a modified survival se
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/nsga3_survival_1.png?raw=true" width="250">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/nsga3_survival_1.png?raw=true" width="250">
 </div>
 
 +++

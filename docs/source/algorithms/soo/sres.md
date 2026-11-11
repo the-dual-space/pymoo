@@ -35,7 +35,7 @@ The stochastic ranking is proposed as follows:
 +++
 
 <div style="text-align: center;">
-    <img src="https://github.com/anyoptimization/pymoo-data/blob/main/docs/images/sr.png?raw=true" width="450">
+    <img src="https://github.com/the-dual-space/pymoo-data/blob/main/docs/images/sr.png?raw=true" width="450">
 </div>
 
 +++

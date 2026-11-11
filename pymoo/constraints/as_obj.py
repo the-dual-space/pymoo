@@ -50,5 +50,9 @@ class ConstraintsAsObjective(Meta, Problem):
     def pareto_front(self, *args, **kwargs):
         pf = super().pareto_front(*args, **kwargs)
         if pf is not None:
-            pf = np.column_stack([np.zeros(len(pf)), pf])
+            zeros = np.zeros((len(pf), 1))
+            if self.append:
+                pf = np.column_stack([zeros, pf])
+            else:
+                pf = zeros
         return pf

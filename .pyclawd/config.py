@@ -82,7 +82,7 @@ project = Project(
         clean_ext_globs=["*.c", "*.cpp", "*.so", "*.html"],
     ),
     docs=DocsConfig(
-        runner=["uvx", "--from", "./docs", "pymoo-docs"],
+        runner=["pymoo-docs"],
         source_dir="docs/source",
         cache_dir="docs/.jupyter_cache",
         cache_db="docs/.jupyter_cache/global.db",

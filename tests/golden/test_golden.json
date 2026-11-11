@@ -1447,10 +1447,10 @@
   },
   "test_golden_soo[BIPOPCMAES]": {
     "atol": 1e-06,
-    "hash": "sha256:58b83de811b70bd615d1cacb870eeab8a43e949c5b1aa6d74c5413e762746bc9",
+    "hash": "sha256:6f13eecfb329f960f6b6e16e2097c43a11b807eb80ce792a973180210ff639da",
     "rtol": 1e-06,
     "value": [
-      3.4192e-06
+      6.3235e-06
     ]
   },
   "test_golden_soo[BRKGA]": {
@@ -1463,10 +1463,10 @@
   },
   "test_golden_soo[CMAES]": {
     "atol": 1e-06,
-    "hash": "sha256:58b83de811b70bd615d1cacb870eeab8a43e949c5b1aa6d74c5413e762746bc9",
+    "hash": "sha256:6f13eecfb329f960f6b6e16e2097c43a11b807eb80ce792a973180210ff639da",
     "rtol": 1e-06,
     "value": [
-      3.4192e-06
+      6.3235e-06
     ]
   },
   "test_golden_soo[DE]": {
@@ -1882,10 +1882,10 @@
   },
   "test_golden_soo[SimpleCMAES]": {
     "atol": 1e-06,
-    "hash": "sha256:58b83de811b70bd615d1cacb870eeab8a43e949c5b1aa6d74c5413e762746bc9",
+    "hash": "sha256:6f13eecfb329f960f6b6e16e2097c43a11b807eb80ce792a973180210ff639da",
     "rtol": 1e-06,
     "value": [
-      3.4192e-06
+      6.3235e-06
     ]
   }
 }

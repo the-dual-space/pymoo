@@ -11,17 +11,15 @@ class JoblibParallelization:
 
     def __init__(self, n_jobs: int = -1, **kwargs: object) -> None:
         try:
-            import joblib
+            from joblib import Parallel, delayed
         except ImportError:
             raise ImportError("joblib must be installed: pip install joblib")
 
-        self.joblib = joblib
+        self.Parallel = Parallel
+        self.delayed = delayed
         self.n_jobs = n_jobs
         self.kwargs = kwargs
 
     def __call__(self, f, X):
-        with self.joblib.Parallel(n_jobs=self.n_jobs, **self.kwargs) as parallel:
-            return parallel(self.joblib.delayed(f)(x) for x in X)
-
-    def __getstate__(self):
-        return self.__dict__.copy()
+        with self.Parallel(n_jobs=self.n_jobs, **self.kwargs) as parallel:
+            return parallel(self.delayed(f)(x) for x in X)

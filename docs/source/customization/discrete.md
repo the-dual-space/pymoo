@@ -68,8 +68,8 @@ print("Constraint violation: %s" % res.CV)
 import matplotlib.pyplot as plt
 from pymoo.visualization.util import plot
 
-_X = np.row_stack([a.pop.get("X") for a in res.history])
-feasible = np.row_stack([a.pop.get("feasible") for a in res.history])[:, 0]
+_X = np.vstack([a.pop.get("X") for a in res.history])
+feasible = np.vstack([a.pop.get("feasible") for a in res.history])[:, 0]
 
 plot(_X[feasible], _X[np.logical_not(feasible)], res.X[None,:]
      , labels=["Feasible", "Infeasible", "Best"])

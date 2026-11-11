@@ -39,7 +39,7 @@ def sqrt(*args, **kwargs):  # type: ignore[name-defined]
 
 def row_stack(*args, **kwargs):  # type: ignore[name-defined]
     """Stack arrays vertically."""
-    return anp.row_stack(*args, **kwargs)
+    return anp.vstack(*args, **kwargs)
 
 
 def triu_indices(*args, **kwargs):  # type: ignore[name-defined]

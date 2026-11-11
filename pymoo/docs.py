@@ -72,6 +72,10 @@ algorithms = {
                     The reference direction that should be used during the optimization. Each row represents a reference line
                     and each column a variable.
             """,
+    "output": """:class:`~pymoo.util.display.output.Output`
+                    The output display configuration which defines the columns printed during the run
+                    (if ``verbose=True``).
+            """,
 }
 
 visualization = {

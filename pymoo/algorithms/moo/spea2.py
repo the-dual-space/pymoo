@@ -193,7 +193,7 @@ class SPEA2(GeneticAlgorithm):
             eliminate_duplicates: {eliminate_duplicates}
             n_offsprings: {n_offsprings}
             output: {output}
-            **kwargs: {kwargs}
+            **kwargs: Additional keyword arguments passed to the parent class.
 
         """
         super().__init__(

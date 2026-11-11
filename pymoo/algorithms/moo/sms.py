@@ -165,7 +165,7 @@ class SMSEMOA(GeneticAlgorithm):
             survival: {survival}
             eliminate_duplicates: {eliminate_duplicates}
             n_offsprings: {n_offsprings}
-            normalize: {normalize}
+            normalize: Whether the objective space is normalized before the hypervolume contributions are computed.
             output: {output}
             **kwargs: Additional keyword arguments passed to the parent class.
 

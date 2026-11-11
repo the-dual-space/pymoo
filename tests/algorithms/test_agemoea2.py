@@ -107,3 +107,33 @@ def test_compute_geometry_p2():
 
     p = survival.compute_geometry(front, [0, 2], n)
     np.testing.assert_almost_equal(2.0, p)
+
+
+def test_survival_ranks_the_truncated_front_by_proximity():
+    # Regression: the front that is cut (rank > 0) used to keep a crowding distance of
+    # zero, so its survivors were picked by index order instead of by proximity to the
+    # ideal point. Front 0 has three points, front 1 has four, and five must survive.
+    from pymoo.algorithms.moo.age import AGEMOEASurvival
+    from pymoo.core.population import Population
+    from pymoo.problems import get_problem
+
+    F = np.array(
+        [
+            [0.0, 1.0],
+            [0.5, 0.5],
+            [1.0, 0.0],
+            # front 1: the two points close to the ideal come first, the far ones last
+            [0.8, 0.9],
+            [0.9, 0.8],
+            [0.6, 3.0],
+            [3.0, 0.6],
+        ]
+    )
+    for survival in (AGEMOEASurvival(), AGEMOEA2Survival()):
+        pop = Population.new("F", F.copy())
+        survivors = survival.do(get_problem("zdt1"), pop, n_survive=5)
+        kept = {tuple(f) for f in survivors.get("F")}
+
+        assert (0.8, 0.9) in kept and (0.9, 0.8) in kept
+        assert (0.6, 3.0) not in kept and (3.0, 0.6) not in kept
+        assert np.all(pop.get("crowding")[3:] > 0)

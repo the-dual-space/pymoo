@@ -133,7 +133,9 @@ class AGEMOEASurvival(Survival):
 
         # Calculate the crowding distance of the first front as well as p and the normalization constants
         crowd_dist[front_no == 0], p, normalization = self.survival_score(front1, ideal_point)
-        for i in range(1, max_f_no):  # skip first front since it is normalized by survival_score
+        # skip first front since it is normalized by survival_score; include the front to be cut
+        # (max_f_no), otherwise its crowding distance stays zero and it is truncated in index order
+        for i in range(1, max_f_no + 1):
             front = F[front_no == i, :]
             m, _ = front.shape
             with np.errstate(divide="ignore", invalid="ignore"):

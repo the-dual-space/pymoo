@@ -1,0 +1,7 @@
+{# Overrides the theme's copyright component to credit The Dual Space (copyright in conf.py). #}
+{% if show_copyright and copyright %}
+  <p class="copyright">
+    © Copyright {{ copyright|e }}, <a href="https://thedualspace.com/" target="_blank" rel="noopener">The Dual Space</a>.
+    <br/>
+  </p>
+{% endif %}

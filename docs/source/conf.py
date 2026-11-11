@@ -60,6 +60,10 @@ extensions = [
     'sphinx.ext.githubpages',
 ]
 
+# Show default arguments as written in the source (e.g. FloatRandomSampling())
+# instead of their repr (<... object at 0x...>).
+autodoc_preserve_defaults = True
+
 bibtex_bibfiles = ['references.bib']
 
 # ===========================================================================
@@ -73,7 +77,7 @@ html_favicon = '_static/favicon.ico'
 # Sphinx Book Theme configuration
 html_theme_options = {
     "default_mode": "light",
-    "repository_url": "https://github.com/anyoptimization/pymoo",
+    "repository_url": "https://github.com/the-dual-space/pymoo",
     "repository_branch": "main",
     "path_to_docs": "docs/source",
     "use_repository_button": True,

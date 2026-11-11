@@ -5,9 +5,9 @@
    :keywords: Multi-objective Optimization, Evolutionary Algorithm, NSGA2
 
 
-.. |anyopt| raw:: html
+.. |thedualspace| raw:: html
 
-   <a href="https://anyoptimization.com" target="_blank">anyoptimization</a>
+   <a href="https://thedualspace.com/" target="_blank">The Dual Space</a>
 
 
 .. |blankjul| raw:: html
@@ -20,11 +20,11 @@
 
 .. |github| raw:: html
 
-   <a href="https://github.com/anyoptimization/pymoo" target="_blank">GitHub</a>
+   <a href="https://github.com/the-dual-space/pymoo" target="_blank">GitHub</a>
 
 .. |issues| raw:: html
 
-   <a href="https://github.com/anyoptimization/pymoo/issues" target="_blank">Issue Tracker</a>
+   <a href="https://github.com/the-dual-space/pymoo/issues" target="_blank">Issue Tracker</a>
 
 
 .. |coin| raw:: html
@@ -113,7 +113,7 @@ News
 About
 ********************************************************************************
 
-This framework is powered by |anyopt|, a Python research community. It is developed and maintained by |blankjul| who is affiliated to the
+This framework is powered by |thedualspace|. It is developed and maintained by |blankjul| who is affiliated to the
 |coin| supervised
 by |kdeb| at the Michigan State University in
 East Lansing, Michigan, USA.
@@ -136,7 +136,7 @@ Moreover, any kind of **contribution** is more than welcome:
 
 .. |star| raw:: html
 
-   <a href="https://github.com/anyoptimization/pymoo" style="text-decoration: none;">⭐</a>
+   <a href="https://github.com/the-dual-space/pymoo" style="text-decoration: none;">⭐</a>
 
 .. raw:: html
 

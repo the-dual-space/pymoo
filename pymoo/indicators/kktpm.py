@@ -33,7 +33,8 @@ class KKTPM:
         # if not provided take the one defined in the problem
         if z is None:
             z = problem.ideal_point()
-        z -= utopian_eps
+        # shift by the epsilon on a copy: the problem caches its ideal point and the caller owns `ideal`
+        z = np.asarray(z, dtype=float) - utopian_eps
 
         # for convenience get the counts directly
         n_solutions, n_obj, n_ieq_constr = (

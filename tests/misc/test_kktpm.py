@@ -59,3 +59,21 @@ def test_kktpm_correctness(str_problem, params):
     # make sure the results are almost equal
     np.testing.assert_almost_equal(kktpm, _kktpm, decimal=4)
     print(str_problem, error.mean())
+
+
+def test_kktpm_does_not_modify_the_ideal_point():
+    problem = AutomaticDifferentiation(ConstraintsFromBounds(get_problem("zdt2", n_var=3)))
+    X = np.array([[0.3, 0.1, 0.2], [0.6, 0.2, 0.3]])
+
+    # the cached ideal point of the problem is left untouched and repeated calls agree
+    ideal = problem.ideal_point().copy()
+    first = KKTPM().calc(X, problem)
+    second = KKTPM().calc(X, problem)
+    np.testing.assert_array_equal(problem.ideal_point(), ideal)
+    np.testing.assert_array_equal(first, second)
+
+    # an explicitly passed ideal point is not modified either
+    explicit = np.zeros(2)
+    third = KKTPM().calc(X, problem, ideal=explicit)
+    np.testing.assert_array_equal(explicit, np.zeros(2))
+    np.testing.assert_array_equal(first, third)

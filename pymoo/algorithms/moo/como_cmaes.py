@@ -38,12 +38,15 @@ class COMOCMAES(Algorithm):
             pop_size: Number of CMA-ES kernels — roughly the number of Pareto-front
                 points sought. Each kernel is a full CMA-ES.
             sigma: Initial step size in the normalized ``[0, 1]`` decision space.
-            reference_point: Hypervolume reference point for the UHVI indicator. If
-                ``None`` a large *equal* reference point ``[R, R]`` is used with
-                ``R = ref_factor * max|F|`` from the initial sample; the equal, far
-                reference keeps the two objectives' contributions balanced regardless
-                of their scales, which is robust on well-scaled problems (pass an
-                explicit nadir for extreme per-objective scale disparities).
+            reference_point: Hypervolume reference point for the UHVI indicator. It is
+                fixed for the whole run. If ``None`` a large *equal* reference point
+                ``[R, R]`` is used with ``R = ref_factor * max|F|`` from the initial
+                sample; the equal, far reference keeps the two objectives'
+                contributions balanced regardless of their scales. With such a far
+                reference point, kernels can stall on the boundary of a bounded
+                objective (for example ``f1 = 0`` on ZDT1-3), so whenever the nadir is
+                known, pass a reference point just beyond it, as in the authors'
+                bbob-biobj benchmark (for example ``[1.1, 1.1]`` on ZDT1-3).
             ref_factor: Multiplier for the automatic reference point (see above).
             sampling: Sampling used for the initial population / reference estimate.
             output: Display output used to report progress during the run.

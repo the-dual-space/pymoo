@@ -5,11 +5,11 @@ import pytest
 
 pytest.importorskip("comocma")
 
-from pymoo.algorithms.moo.como_cmaes import COMOCMAES  # noqa: E402
-from pymoo.core.problem import Problem  # noqa: E402
-from pymoo.indicators.hv import Hypervolume  # noqa: E402
-from pymoo.optimize import minimize  # noqa: E402
-from pymoo.problems import get_problem  # noqa: E402
+from pymoo.algorithms.moo.como_cmaes import COMOCMAES
+from pymoo.core.problem import Problem
+from pymoo.indicators.hv import Hypervolume
+from pymoo.optimize import minimize
+from pymoo.problems import get_problem
 
 
 def test_como_cmaes_runs_and_is_competitive():

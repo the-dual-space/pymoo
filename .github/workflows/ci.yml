@@ -40,7 +40,7 @@ jobs:
           # the docs build with its output guardrail. It runs under the CI Python
           # (sys.executable — conda_env in config is advisory only). >=0.1.1 is
           # the release carrying `pyclawd docs validate`.
-          pip install "pyclawd>=0.1.1" pytest-xdist pytest-xvfb ruff mypy
+          pip install "pyclawd>=0.1.1" pytest-xdist pytest-xvfb ruff mypy ./docs
       - name: Compiled extensions present
         # fail if the Cython extensions didn't compile — otherwise the suite would
         # silently run the slow pure-Python fallback (P-5b).

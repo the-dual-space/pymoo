@@ -47,7 +47,7 @@ jobs:
           pip install -r tests/requirements.txt
           # The output guardrail (`pyclawd docs build`/`validate`) needs the
           # pyclawd release that introduced it. Bump this pin once published.
-          pip install "pyclawd>=0.1.1"
+          pip install "pyclawd>=0.1.1" ./docs
 
       - name: Restore docs execution cache
         uses: actions/cache@v4

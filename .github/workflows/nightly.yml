@@ -90,6 +90,7 @@ jobs:
           python setup.py build_ext --inplace
           pip install -r tests/requirements.txt
           pip install "pyclawd>=0.1.1" pytest-xdist pytest-xvfb
+          pip install ./docs
       - name: Examples (headless via xvfb)
         run: pytest -n auto -m examples
       - name: Restore docs execution cache

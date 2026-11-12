@@ -19,7 +19,7 @@ jobs:
     outputs:
       run: ${{ steps.check.outputs.run }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - id: check
         run: |
           latest=$(git log -1 --format=%ct)
@@ -44,8 +44,8 @@ jobs:
         python: ['3.10', '3.11', '3.12', '3.13', '3.14']
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
           cache: pip
@@ -75,8 +75,8 @@ jobs:
     if: needs.changed.outputs.run == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
           cache: pip
@@ -94,7 +94,7 @@ jobs:
       - name: Examples (headless via xvfb)
         run: pytest -n auto -m examples
       - name: Restore docs execution cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: docs/.jupyter_cache
           key: jupyter-cache-${{ hashFiles('docs/source/**/*.md', 'pymoo/**/*.py') }}

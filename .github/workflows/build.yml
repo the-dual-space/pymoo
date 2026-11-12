@@ -63,7 +63,7 @@ jobs:
                     - os: windows-latest
                       arch: universal2
         steps:
-            - uses: actions/checkout@v5
+            - uses: actions/checkout@v7
             - uses: astral-sh/setup-uv@v7
             - uses: pypa/cibuildwheel@v3.2
               env:
@@ -74,7 +74,7 @@ jobs:
                 CIBW_TEST_COMMAND: >
                   uv run python -c "import sys; import pymoo; print(pymoo); from pymoo.functions import is_compiled; sys.exit(0 if is_compiled() else 42)"
 
-            - uses: actions/upload-artifact@v4
+            - uses: actions/upload-artifact@v7
               with:
                   name: "artifact-${{ matrix.os }}-${{ matrix.build }}-${{ matrix.python }}-${{ matrix.arch }}"
                   path: ./wheelhouse/*.whl
@@ -85,10 +85,10 @@ jobs:
         needs: check_approval
         if: needs.check_approval.outputs.should_build == 'true'
         steps:
-            - uses: actions/checkout@v5
+            - uses: actions/checkout@v7
             - uses: astral-sh/setup-uv@v7
             - run: uv build --sdist
-            - uses: actions/upload-artifact@v4
+            - uses: actions/upload-artifact@v7
               with:
                   name: artifact-source
                   path: dist/*.tar.gz
@@ -98,7 +98,7 @@ jobs:
       needs: [build_wheels, build_sdist]
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/upload-artifact/merge@v4
+        - uses: actions/upload-artifact/merge@v7
           with:
             name: pymoo
             delete-merged: true
@@ -115,7 +115,7 @@ jobs:
         permissions:
             id-token: write   # required for PyPI Trusted Publishing (OIDC)
         steps:
-            - uses: actions/download-artifact@v4
+            - uses: actions/download-artifact@v7
               with:
                   name: pymoo
                   path: dist
@@ -130,8 +130,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v5
-            - uses: actions/setup-python@v5
+            - uses: actions/checkout@v7
+            - uses: actions/setup-python@v7
               with:
                   python-version: '3.12'
             - name: Assert git tag == pymoo.version.__version__
@@ -152,8 +152,8 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v5
-            - uses: actions/setup-python@v5
+            - uses: actions/checkout@v7
+            - uses: actions/setup-python@v7
               with:
                   python-version: '3.12'
                   cache: pip
@@ -184,7 +184,7 @@ jobs:
         permissions:
             id-token: write   # required for PyPI Trusted Publishing (OIDC)
         steps:
-            - uses: actions/download-artifact@v4
+            - uses: actions/download-artifact@v7
               with:
                   name: pymoo
                   path: dist

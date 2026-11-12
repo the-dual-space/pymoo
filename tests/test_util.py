@@ -75,9 +75,15 @@ def run_file(f):
                    "matplotlib.use('Agg')\n" \
                    "import matplotlib.pyplot as plt\n"
 
-        s = no_plots + s + "\nplt.close()\n"
+        s = no_plots + s
 
-        exec(s, vars)
+        # examples share one pyplot state per worker: start clean and always clean up
+        import matplotlib.pyplot as _plt
+        _plt.close("all")
+        try:
+            exec(s, vars)
+        finally:
+            _plt.close("all")
 
 
 def remove_trailing_empty_cells(ipynb):

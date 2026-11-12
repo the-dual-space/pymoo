@@ -30,33 +30,35 @@ class COMOCMAES(Algorithm):
     generous evaluation budget on difficult problems.
     """
 
-    def __init__(self, pop_size=32, sigma=0.2, reference_point=None, ref_factor=1e6,
+    def __init__(self, reference_point, pop_size=32, sigma=0.2,
                  sampling=FloatRandomSampling(), output=MultiObjectiveOutput(), **kwargs):
         """Initialize COMO-CMA-ES.
 
         Args:
+            reference_point: Hypervolume reference point ``[r1, r2]`` for the UHVI
+                indicator. Required and fixed for the whole run. Pass a point just
+                beyond the nadir, as in the authors' bbob-biobj benchmark (for example
+                ``[1.1, 1.1]`` on ZDT1-3). A point far beyond the nadir lets kernels
+                stall on the boundary of a bounded objective (for example ``f1 = 0``
+                on ZDT1-3), and a point that does not dominate the front cuts off the
+                part of it that lies beyond the point.
             pop_size: Number of CMA-ES kernels — roughly the number of Pareto-front
                 points sought. Each kernel is a full CMA-ES.
             sigma: Initial step size in the normalized ``[0, 1]`` decision space.
-            reference_point: Hypervolume reference point for the UHVI indicator. It is
-                fixed for the whole run. If ``None`` a large *equal* reference point
-                ``[R, R]`` is used with ``R = ref_factor * max|F|`` from the initial
-                sample; the equal, far reference keeps the two objectives'
-                contributions balanced regardless of their scales. With such a far
-                reference point, kernels can stall on the boundary of a bounded
-                objective (for example ``f1 = 0`` on ZDT1-3), so whenever the nadir is
-                known, pass a reference point just beyond it, as in the authors'
-                bbob-biobj benchmark (for example ``[1.1, 1.1]`` on ZDT1-3).
-            ref_factor: Multiplier for the automatic reference point (see above).
-            sampling: Sampling used for the initial population / reference estimate.
+            sampling: Sampling used for the initial population.
             output: Display output used to report progress during the run.
             **kwargs: Additional keyword arguments forwarded to ``Algorithm``.
         """
         super().__init__(output=output, **kwargs)
+        if reference_point is None or np.shape(reference_point) != (2,) or not np.all(np.isfinite(reference_point)):
+            raise ValueError(
+                "COMOCMAES needs an explicit bi-objective reference_point [r1, r2] (finite). "
+                "Pass a point just beyond the nadir of the problem, e.g. reference_point=[1.1, 1.1] "
+                "on ZDT1-3; there is no default because a far-away point makes the kernels stall."
+            )
         self.pop_size = pop_size
         self.sigma0 = sigma
-        self.reference_point = reference_point
-        self.ref_factor = ref_factor
+        self.reference_point = [float(r) for r in reference_point]
         self.sampling = sampling
         self.norm = None
         self.moes = None
@@ -84,13 +86,7 @@ class COMOCMAES(Algorithm):
         n = self.problem.n_var
         rs = self.random_state
 
-        if self.reference_point is not None:
-            ref_point = list(self.reference_point)
-        else:
-            # a large *equal* reference point balances the two objectives'
-            # hypervolume contributions regardless of their scales
-            r = self.ref_factor * max(1.0, float(np.abs(infills.get("F")).max()))
-            ref_point = [r] * self.problem.n_obj
+        ref_point = list(self.reference_point)
 
         x0 = [list(rs.random(n)) for _ in range(self.pop_size)]
         seed = int(rs.integers(0, 2**31 - 1))

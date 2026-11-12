@@ -6,7 +6,6 @@ import pytest
 pytest.importorskip("comocma")
 
 from pymoo.algorithms.moo.como_cmaes import COMOCMAES
-from pymoo.core.problem import Problem
 from pymoo.indicators.hv import Hypervolume
 from pymoo.optimize import minimize
 from pymoo.problems import get_problem
@@ -21,17 +20,15 @@ def test_como_cmaes_runs_and_is_competitive():
     assert hv > 0.75  # close to a well-converged NSGA-II front
 
 
-def test_como_cmaes_default_reference_point_is_far_and_equal():
-    class Plain(Problem):
-        def __init__(self):
-            super().__init__(n_var=2, n_obj=2, xl=0.0, xu=1.0)
+@pytest.mark.parametrize("bad", [None, [1.1], [1.1, 1.1, 1.1], [1.1, np.inf]])
+def test_como_cmaes_requires_a_finite_biobjective_reference_point(bad):
+    with pytest.raises(ValueError, match="reference_point"):
+        COMOCMAES(bad)
 
-        def _evaluate(self, x, out, *args, **kwargs):
-            out["F"] = np.column_stack([x[:, 0], 1.0 - x[:, 0] + x[:, 1] ** 2])
 
-    res = minimize(Plain(), COMOCMAES(pop_size=10), ("n_gen", 2), seed=1, verbose=False)
-    ref = res.algorithm.moes.reference_point
-    assert ref[0] == ref[1] and ref[0] >= 1e6
+def test_como_cmaes_reference_point_is_required():
+    with pytest.raises(TypeError):
+        COMOCMAES()
 
 
 def test_como_cmaes_reports_kernels_when_none_dominates_reference_point():
@@ -47,7 +44,7 @@ def test_como_cmaes_reports_kernels_when_none_dominates_reference_point():
 def test_como_cmaes_requires_biobjective():
     problem = get_problem("dtlz2", n_var=7, n_obj=3)
     with pytest.raises(ValueError, match="bi-objective"):
-        minimize(problem, COMOCMAES(pop_size=10), ("n_gen", 2), seed=1, verbose=False)
+        minimize(problem, COMOCMAES([1.1, 1.1], pop_size=10), ("n_gen", 2), seed=1, verbose=False)
 
 
 def test_como_cmaes_rejects_constrained_problems():
@@ -55,7 +52,7 @@ def test_como_cmaes_rejects_constrained_problems():
     # returned solutions reported with CV = 0
     problem = get_problem("tnk")
     with pytest.raises(ValueError, match="constrained"):
-        minimize(problem, COMOCMAES(pop_size=10), ("n_gen", 2), seed=1, verbose=False)
+        minimize(problem, COMOCMAES([1.1, 1.1], pop_size=10), ("n_gen", 2), seed=1, verbose=False)
 
 
 def test_como_cmaes_deterministic():

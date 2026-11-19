@@ -1,30 +1,24 @@
 """Progress bar wrapper for optimization visualization."""
 
 import math
+from types import TracebackType
 from typing import Any
-
-from alive_progress import alive_bar
 
 
 class ProgressBar:
     """Progress bar for displaying optimization progress.
 
     Parameters:
-        *args: Positional arguments passed to alive_bar.
+        total: Total number of progress units.
         start: Whether to start the progress bar immediately.
         non_decreasing: Whether to ensure progress only increases.
-        **kwargs: Keyword arguments passed to alive_bar.
+        **kwargs: Keyword arguments passed to tqdm.
     """
 
-    def __init__(self, *args: Any, start: bool = True, non_decreasing: bool = True, **kwargs: Any) -> None:
-        self.args = args
+    def __init__(self, total: float = 1.0, *, start: bool = True, non_decreasing: bool = True, **kwargs: Any) -> None:
+        self.total = total
+        kwargs.setdefault("bar_format", "{l_bar}{bar}| [{elapsed}<{remaining}]")
         self.kwargs = kwargs
-
-        for key, default in [("manual", True), ("force_tty", True)]:
-            if key not in kwargs:
-                kwargs[key] = default
-
-        self.func: Any = None
         self.obj: Any = None
         self.non_decreasing = non_decreasing
         self._max = 0.0
@@ -47,28 +41,32 @@ class ProgressBar:
         prec = 100
         value = math.floor(value * prec) / prec
 
-        self.obj(value, *args, **kwargs)
+        self.obj.n = value * self.total
+        self.obj.refresh(*args, **kwargs)
 
     def start(self) -> None:
         """Start the progress bar."""
-        if not self.obj:
-            self.func = alive_bar(*self.args, **self.kwargs).gen
+        if self.obj is None:
+            from tqdm.auto import tqdm
 
-            self.obj = next(self.func)
+            self.obj = tqdm(total=self.total, **self.kwargs)
 
     def close(self) -> None:
         """Close the progress bar."""
-        if self.obj:
-            try:
-                next(self.func)
-            except:  # noqa: E722
-                pass
+        if self.obj is not None:
+            self.obj.close()
+            self.obj = None
 
-    def __enter__(self) -> "ProgressBar":
+    def __enter__(self) -> "ProgressBar":  # noqa: PYI034
         """Enter context manager."""
         self.start()
         return self
 
-    def __exit__(self, type: Any, value: Any, traceback: Any) -> None:
+    def __exit__(
+        self,
+        exc_type: type[BaseException] | None,
+        exc_value: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> None:
         """Exit context manager."""
         self.close()

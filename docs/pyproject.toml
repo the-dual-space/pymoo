@@ -27,7 +27,7 @@ dependencies = [
     "sphinx-copybutton",
     "numpydoc",
     "wrapt",  # Required by pymoo's Meta classes
-    "alive-progress",  # Required by pymoo algorithms
+    "tqdm",  # Required by pymoo algorithms
     
     # Jupyter and notebook support
     "ipython",

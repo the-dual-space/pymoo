@@ -298,7 +298,7 @@ not a migration strategy.
 - Exclude `*.pyx`/`*.cpp`/`*.pxd` from the **wheel** (keep `.pyx`/`.pxd` in the sdist) —
   removes ~19% bloat.
 - `exclude tests/*` → `prune tests` in `MANIFEST.in`.
-- Add lower bounds for `alive_progress`/`Deprecated`; raise ancient `scipy`/`matplotlib`
+- Add lower bounds for `tqdm`/`Deprecated`; raise ancient `scipy`/`matplotlib`
   floors to a tested baseline; consider conservative upper caps on volatile numerical
   deps.
 **Why non-breaking:** smaller wheels, same API.

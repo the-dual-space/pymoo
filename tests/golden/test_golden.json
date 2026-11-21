@@ -1517,6 +1517,14 @@
       1.4356e-06
     ]
   },
+  "test_golden_soo[MDE]": {
+    "atol": 1e-06,
+    "hash": "sha256:33d1288a84b78d418edd5ed40c078b1e9bbcc11b36fd241339d919c49a6d7699",
+    "rtol": 1e-06,
+    "value": [
+      0.0002643601
+    ]
+  },
   "test_golden_soo[NRBO]": {
     "atol": 1e-06,
     "hash": "sha256:4037971c97bb78467ca5f3fd412292a4f545834cd08a49a3194a54d98a172f21",

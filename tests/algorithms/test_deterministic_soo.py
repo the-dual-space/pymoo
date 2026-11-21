@@ -10,6 +10,7 @@ from pymoo.algorithms.soo.nonconvex.g3pcx import G3PCX
 from pymoo.algorithms.soo.nonconvex.ga import GA, BGA
 from pymoo.algorithms.soo.nonconvex.ga_niching import NicheGA
 from pymoo.algorithms.soo.nonconvex.isres import ISRES
+from pymoo.algorithms.soo.nonconvex.mde import MDE
 from pymoo.algorithms.soo.nonconvex.nelder import NelderMead
 from pymoo.algorithms.soo.nonconvex.nrbo import NRBO
 from pymoo.algorithms.soo.nonconvex.pattern import PatternSearch
@@ -24,7 +25,7 @@ from pymoo.problems.single import Sphere
 ALL_SINGLE_OBJECTIVE_ALGORITHMS = [
     GA, NicheGA, DE, ES, BRKGA, NelderMead, PatternSearch,
     CMAES, SimpleCMAES, BIPOPCMAES, ISRES, SRES, PSO, G3PCX, NRBO, 
-    RandomSearch, DIRECT, EPPSO
+    RandomSearch, DIRECT, EPPSO, MDE
 ]
 
 # Test problem

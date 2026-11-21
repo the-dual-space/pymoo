@@ -10,6 +10,7 @@
    :ref:`Improved Stochastic Ranking Evolutionary Strategy <nb_isres>`, ISRES, single, x, An improved version of SRES being able to deal dependent variables efficiently.
    :ref:`G3PCX <nb_g3pcx>`, G3PCX, single, , A real-coded genetic algorithm using the generalized generation gap (G3) model with the parent-centric recombination (PCX) operator.
    :ref:`Newton-Raphson-based Optimizer <nb_nrbo>`, NRBO, single, x, A population-based metaheuristic inspired by Newton-Raphson method with high optimization efficiency.
+   :ref:`Multi-population based Differential Evolution <nb_mde>`, MDE, single, x, A differential evolution variant without control parameters (no F and CR) that evolves a randomly drawn sub-population of a larger population in each generation.
    :ref:`NSGA-II <nb_nsga2>`, NSGA2, multi, x, Well-known multi-objective optimization algorithm based on non-dominated sorting and crowding.
    :ref:`R-NSGA-II <nb_rnsga2>`, RNSGA2, multi, x, An extension of NSGA-II where reference/aspiration points can be provided by the user.
    :ref:`PI-NSGA-II <nb_pinsga2>`, PINSGA2, multi, x, An interactive version of NSGA-II that uses user preference to guide the optimization towards desired solutions.

@@ -57,6 +57,9 @@ Single-objective
 .. autoclass:: pymoo.algorithms.soo.nonconvex.nrbo.NRBO
     :noindex:
 
+.. autoclass:: pymoo.algorithms.soo.nonconvex.mde.MDE
+    :noindex:
+
 .. autoclass:: pymoo.algorithms.soo.nonconvex.direct.DIRECT
     :noindex:
 

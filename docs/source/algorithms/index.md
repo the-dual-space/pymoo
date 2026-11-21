@@ -42,6 +42,7 @@ kernelspec:
    soo/cmaes
    soo/g3pcx
    soo/nrbo
+   soo/mde
    moo/nsga2
    moo/rnsga2
    moo/nsga3

@@ -10,7 +10,9 @@ from pymoo.util import default_random_state
 def randomized_argsort(A, method="numpy", order="ascending", random_state=None):
     if method == "numpy":
         P = random_state.permutation(len(A))
-        I = np.argsort(A[P], kind="quicksort")  # noqa: E741
+        # A stable sort lets the seeded permutation alone break ties. Quicksort is unstable and
+        # NumPy dispatches it to different SIMD kernels per CPU, so tie order would vary by machine.
+        I = np.argsort(A[P], kind="stable")  # noqa: E741
         I = P[I]  # noqa: E741
 
     elif method == "quicksort":

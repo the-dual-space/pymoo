@@ -171,11 +171,14 @@ def split_by_feasibility(
     feasible = np.where(b)[0]
     infeasible = np.where(~b)[0]
 
+    # A stable sort keeps ties in population order. The default quicksort is unstable and
+    # NumPy dispatches it to different SIMD kernels per CPU, so tie order (and therefore
+    # which solutions survive) would otherwise differ between machines for the same seed.
     if sort_infeas_by_cv:
-        infeasible = infeasible[np.argsort(CV[infeasible, 0])]
+        infeasible = infeasible[np.argsort(CV[infeasible, 0], kind="stable")]
 
     if sort_feas_by_obj:
-        feasible = feasible[np.argsort(F[feasible, 0])]
+        feasible = feasible[np.argsort(F[feasible, 0], kind="stable")]
 
     if not return_pop:
         return feasible, infeasible
